@@ -4,12 +4,12 @@ public class ReverseDigits {
 
     public static void main(String[] args)
     {
-        reverseDigits(119);
+        reverseDigits(9999);
     }
 
     public static int reverseDigits(int number)
     {
-        if (100<=number||number<=999)
+        if (100<=number&&number<=999)
         {
             int x = number/100;
             int y = number/10 -x*10;
