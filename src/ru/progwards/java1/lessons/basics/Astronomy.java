@@ -8,13 +8,11 @@ public class Astronomy {
         earthSquare();
     }
 
-
     public static Double sphereSquare(Double r)
     {
         double p = 3.14;
         //double r;
         double S = 4*p*r*r;
-
         System.out.println(S);
         return S;
     }
@@ -23,9 +21,7 @@ public class Astronomy {
     public static Double earthSquare()
     {
         double Earth = sphereSquare(6371.2);
-        System.out.println(Earth);
+        //System.out.println(Earth);
         return Earth;
     }
-
-
 }
