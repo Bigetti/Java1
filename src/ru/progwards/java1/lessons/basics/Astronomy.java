@@ -25,7 +25,7 @@ public class Astronomy {
     public static Double earthSquare()
     {
         double Earth = sphereSquare(6371.2);
-        //System.out.println("Площадь Земли =" + Earth);
+        //System.out.println("Площадь Земли =" + Earth + "км");
         return Earth;
     }
 
@@ -44,9 +44,9 @@ public class Astronomy {
 
     public static Double earthVsMercury(){
         double earth = earthSquare();
-        System.out.println("Площадь Земли =" + earth);
+        System.out.println("Площадь Земли =" + earth + " км");
         double mercury = mercurySquare();
-        System.out.println("Площадь Меркурия =" + mercury);
+        System.out.println("Площадь Меркурия =" + mercury + " км");
         double EM = earth/mercury;
         System.out.println("Отношение земли к меркурию" + "=" + EM);
         return EM;
@@ -55,7 +55,7 @@ public class Astronomy {
     public static Double earthVsJupiter(){
         double earth = earthSquare();
         double jupiter = jupiterSquare();
-        System.out.println("Площадь Юпитера =" + jupiter);
+        System.out.println("Площадь Юпитера =" + jupiter + " км");
         double EJ = earth/jupiter;
         System.out.println("Отношение земли к Юпитеру" + "=" + EJ);
         return EJ;
