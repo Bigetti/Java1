@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.test;
 
-public class Test {
+public class Test1 {
 
 
     //комментарий 1
