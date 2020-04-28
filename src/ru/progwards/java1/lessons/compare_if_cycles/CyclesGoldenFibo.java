@@ -3,22 +3,25 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 public class CyclesGoldenFibo {
     public static void main(String[] args) 
     {
-        System.out.println(1);
-        System.out.println(1);
-        for (int n = 2; n<15; n++)
+        System.out.println(1 + " 1-е по счету число Фибоначчи");
+        System.out.println(1 + " 2-е по счету число Фибоначчи");
+        for (int i = 1; i<14; i++)
         {
-            int x = fiboNumber(n);
-            System.out.println(x);
+            int x = fiboNumber(i);
         }
+
+        //fiboNumber(10);
+
     }
 
-    /*
+
+/*
        public static boolean containsDigit(int number, int digit)
        {
 
        }
    */
-    public static int fiboNumber(int n) 
+    public static int fiboNumber(int n)
     {
         int a = 1;
         int b = 1;
@@ -31,7 +34,8 @@ public class CyclesGoldenFibo {
             b = sum_fib;
 
             }
-        //System.out.print(sum_fib);
+        System.out.print(sum_fib);
+        System.out.println(" Число Фибоначчи " + (n+2) + "по счету");
         return sum_fib;
     }
 
