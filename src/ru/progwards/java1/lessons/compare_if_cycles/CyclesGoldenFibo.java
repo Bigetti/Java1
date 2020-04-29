@@ -55,7 +55,7 @@ public class CyclesGoldenFibo {
     {
         final float aa = a;
         final float bb = b;
-        final float cc = c;
+
 
         if (a == b && (aa / c) > 1.61703 && (aa / c) < 1.61903)
 
