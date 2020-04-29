@@ -53,19 +53,22 @@ public class CyclesGoldenFibo {
 
     public static boolean isGoldenTriangle(int a, int b, int c)
     {
+        final float aa = a;
+        final float bb = b;
+        final float cc = c;
 
-        if ((a == b && a / c > 1.61703) || (a == b && a / c < 1.61903))
+        if (a == b && (aa / c) > 1.61703 && (aa / c) < 1.61903)
 
         {
             System.out.println("есть! Стороны одного из золотых треугольников = " + a + " " + b + " " + c);
             return true;
         }
-        else if ((a == c && a / b > 1.61703) || (a == c && a / b < 1.61903))
+        else if (a == c && (aa / b) > 1.61703 && (aa / b) < 1.61903)
         {
             System.out.println("есть! Стороны одного из золотых треугольников = " + a + " " + b + " " + c);
             return true;
         }
-        else if ((b == c && b / a > 1.61703) || (b == c && b / a < 1.61903))
+        else if (b == c && (bb / a) > 1.61703 && (bb / a) < 1.61903)
         {
             System.out.println("есть! Стороны одного из золотых треугольников = " + a + " " + b + " " + c);
             return true;
