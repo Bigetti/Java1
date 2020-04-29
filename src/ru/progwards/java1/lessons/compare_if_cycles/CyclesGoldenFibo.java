@@ -10,7 +10,7 @@ public class CyclesGoldenFibo {
             int x = fiboNumber(i);
         }
 
-        //fiboNumber(10);
+        fiboNumber(10);
         //boolean tr = false;
         int a;
         int b;
