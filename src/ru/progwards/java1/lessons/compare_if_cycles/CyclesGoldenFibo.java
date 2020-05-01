@@ -39,14 +39,14 @@ public class CyclesGoldenFibo {
 
         int sum_fib = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             sum_fib = a + b;
             a = b;
             b = sum_fib;
 
         }
         System.out.print(sum_fib);
-        System.out.println(" -Число Фибоначчи " + (n + 2) + "по счету");
+        System.out.println(" -Число Фибоначчи " + (n) + "по счету");
         return sum_fib;
     }
 
