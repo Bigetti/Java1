@@ -29,7 +29,7 @@ public class CyclesGoldenFibo {
             }
         }
 
-        containsDigit(81567657, 6);
+        containsDigit(8106765, 0);
     }
 
 
@@ -76,8 +76,7 @@ public class CyclesGoldenFibo {
         int b = 10;
 
         do {
-            int zzz = celoe;
-            int ostatok = zzz % 10;
+            int ostatok = celoe % 10;
             if (ostatok == digit) {
                 System.out.println(" цифра " + ostatok + " есть в числе " + number);
                 return true;
