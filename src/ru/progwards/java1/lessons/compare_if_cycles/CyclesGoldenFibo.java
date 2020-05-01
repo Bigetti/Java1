@@ -34,20 +34,28 @@ public class CyclesGoldenFibo {
 
 
     public static int fiboNumber(int n) {
-        int a = 1;
-        int b = 1;
+        //int a = 1;
+        //int b = 1;
+        if (n == 1 || n == 2)
 
-        int sum_fib = 0;
-
-        for (int i = 2; i < n; i++) {
-            sum_fib = a + b;
-            a = b;
-            b = sum_fib;
-
+        {
+            System.out.println("1 -Число Фибоначчи " + (n) + "по счету");
+            return 1;
         }
-        System.out.print(sum_fib);
-        System.out.println(" -Число Фибоначчи " + (n) + "по счету");
-        return sum_fib;
+        else {
+            int a = 1;
+            int b = 1;
+            int sum_fib = 0;
+            for (int i = 2; i < n; i++) {
+                sum_fib = a + b;
+                a = b;
+                b = sum_fib;
+
+            }
+            System.out.print(sum_fib);
+            System.out.println(" -Число Фибоначчи " + (n) + "по счету");
+            return sum_fib;
+        }
     }
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
