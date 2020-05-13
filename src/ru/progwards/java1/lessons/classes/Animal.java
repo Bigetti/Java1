@@ -2,19 +2,28 @@ package ru.progwards.java1.lessons.classes;
 
 public class Animal {
 
-    double foodCoeff = 0.02d;
-    private double weight = 1d;
+    //double foodCoeff = 0.02d;
+    private double weight;
 
-    enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK};
-    enum FoodKind {UNKNOWN, HAY, CORN};
+    enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK}
 
-    AnimalKind animalKind = AnimalKind.ANIMAL;
-    FoodKind foodKind = FoodKind.UNKNOWN;
+    ;
+
+    enum FoodKind {UNKNOWN, HAY, CORN}
+
+    ;
+
+    //AnimalKind animalKind = AnimalKind.ANIMAL;
+    //FoodKind foodKind = FoodKind.UNKNOWN;
 
     public static void main(String[] args) {
 
-        Animal animal = new Animal(AnimalKind.DUCK, FoodKind.CORN, 3, 0.04);
+        Animal animal = new Animal(1);
         System.out.println(animal);
+        Hamster hamster = new Hamster(4);
+        System.out.println(hamster);
+
+
     }
 
     public Animal(double weight) {
@@ -22,101 +31,102 @@ public class Animal {
 
     }
 
-    public Animal(AnimalKind animalKind, FoodKind food, double weight, double foodCoeff) {
-        this.animalKind = animalKind;
-        this.foodKind = food;
-        this.weight = weight;
-        this.foodCoeff = foodCoeff;
-    }
+
 
     public AnimalKind getKind() {
-        return animalKind = AnimalKind.ANIMAL;
+        return AnimalKind.ANIMAL;
     }
 
     public FoodKind getFoodKind() {
-        return foodKind = FoodKind.UNKNOWN;
+        return FoodKind.UNKNOWN;
     }
 
-    public double getWeight(){
+    public double getWeight() {
         return weight;
     }
 
-    public double getFoodCoeff(){
-        return foodCoeff;
+    public double getFoodCoeff() {
+        return 0.02;
     }
 
-    public double calculateFoodWeight(){
+    public double calculateFoodWeight() {
         return getWeight() * getFoodCoeff();
     }
 
 
     @Override
     public String toString() {
-        return "I am " + animalKind + " eat " + foodKind  + " " + calculateFoodWeight();
+        return "I am " + getKind() + " eat " + getFoodKind() + " " + calculateFoodWeight();
     }
-    //@Override
-    //public String toStringFull(){
-    //    return  "I am " + animalKind +  " eat" + foodKind + " " + calculateFoodWeight();
-    //}
 
 
 }
 
-class Cow extends Animal{
+class Cow extends Animal {
 
 
     public Cow(double weight) {
         super(weight);
     }
 
-    public AnimalKind getKind(){
-        return animalKind = AnimalKind.COW;
+    @Override
+    public AnimalKind getKind() {
+        return AnimalKind.COW;
     }
 
-    public FoodKind getFoodKind(){
-        return foodKind = FoodKind.HAY;
+    @Override
+    public FoodKind getFoodKind() {
+        return FoodKind.HAY;
     }
 
-    public double getFoodCoeff(){
-        return foodCoeff = 0.05;
+    @Override
+    public double getFoodCoeff() {
+        return 0.05;
     }
 }
 
-class Hamster extends Animal{
+class Hamster extends Animal {
 
     public Hamster(double weight) {
         super(weight);
     }
 
-    public AnimalKind getKind(){
-        return animalKind = AnimalKind.HAMSTER;
+    @Override
+    public AnimalKind getKind() {
+        return AnimalKind.HAMSTER;
     }
 
-    public FoodKind getFoodKind(){
-        return foodKind = FoodKind.CORN;
+    @Override
+    public FoodKind getFoodKind() {
+        return FoodKind.CORN;
     }
 
-    public double getFoodCoeff(){
-        return foodCoeff = 0.03;
+    @Override
+    public double getFoodCoeff() {
+        return 0.03;
     }
 }
 
-class Duck extends Animal{
+class Duck extends Animal {
 
 
     public Duck(double weight) {
         super(weight);
     }
-    public AnimalKind getKind(){
-        return animalKind = AnimalKind.DUCK;
+
+    @Override
+    public AnimalKind getKind() {
+        return AnimalKind.DUCK;
     }
 
-    public FoodKind getFoodKind(){
-        return foodKind = FoodKind.CORN;
+    @Override
+    public FoodKind getFoodKind() {
+        return FoodKind.CORN;
     }
 
-    public double getFoodCoeff(){
-        return foodCoeff = 0.04;
+    @Override
+    public double getFoodCoeff() {
+        return 0.04;
     }
 
 }
