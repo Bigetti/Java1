@@ -2,30 +2,31 @@ package ru.progwards.java1.lessons.classes;
 
 public class Animal {
 
-    //double foodCoeff = 0.02d;
     private double weight;
 
-    enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK}
+    enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK};
 
-    ;
-
-    enum FoodKind {UNKNOWN, HAY, CORN}
-
-    ;
-
-    //AnimalKind animalKind = AnimalKind.ANIMAL;
-    //FoodKind foodKind = FoodKind.UNKNOWN;
+    enum FoodKind {UNKNOWN, HAY, CORN};
+    /////////////////////////////////////////////////////
 
     public static void main(String[] args) {
 
         Animal animal = new Animal(1);
         System.out.println(animal);
         Hamster hamster = new Hamster(4);
+        Hamster yellow = new Hamster(11);
+        System.out.println(yellow);
         System.out.println(hamster);
+        Duck duck = new Duck(7);
+        Cow cow = new Cow(233);
+        Cow Burenka = new Cow(544);
+        System.out.println(Burenka);
+        System.out.println(cow);
+        System.out.println(duck);
 
 
     }
-
+//////////////////////////////////////////////////////////
     public Animal(double weight) {
         this.weight = weight;
 
