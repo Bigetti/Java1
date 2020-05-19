@@ -19,6 +19,8 @@ public class ComplexNum {
         System.out.println(num1.sub(num2));
         System.out.println(num1.mul(num2));
         System.out.println(num1.div(num2));
+        System.out.println("Ненавижу синусы косинусы тангенсы катангенсы факториалы модули комплексные числа корни \n" +
+                " и всю остальную высшую математику.");
 
     }
     /////////////////////////////////////////////
@@ -56,12 +58,13 @@ public class ComplexNum {
     }
 
     // деление комплексных чисел по формуле:
-    //(a + bi) / (c + di) = (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
+    //(a + bi) / (c + di) = (a*c + b*d)/(c*c+d*d) + ((c*b - a*d)/(c*c+d*d))i
     public ComplexNum div(ComplexNum num) {
-        int a = this.a, b = num.b, c = this.a, d = num.b;
+        int a = this.a, b = this.b, c = num.a, d = num.b;
         return new ComplexNum((a * c + b * d) / (c * c + d * d),
                 (b * c - a * d) / (c * c + d * d));
     }
+
 }
 
 
