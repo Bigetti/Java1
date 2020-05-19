@@ -18,11 +18,14 @@ public class Animal {
         System.out.println(yellow);
         System.out.println(hamster);
         Duck duck = new Duck(7);
+        Duck duck1 = new Duck(4);
         Cow cow = new Cow(233);
         Cow Burenka = new Cow(544);
         System.out.println(Burenka);
         System.out.println(cow);
-        System.out.println(duck);
+        System.out.println(duck.toString());
+        System.out.println(duck.toStringFull());
+        System.out.println(duck1.toStringFull());
 
 
     }
@@ -57,7 +60,12 @@ public class Animal {
 
     @Override
     public String toString() {
+        return "I am " + getKind() + " eat " + getFoodKind();
+    }
+
+    public String toStringFull() {
         return "I am " + getKind() + " eat " + getFoodKind() + " " + calculateFoodWeight();
+
     }
 
 

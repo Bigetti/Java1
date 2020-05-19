@@ -15,10 +15,10 @@ public class ComplexNum {
         System.out.println(num1);
         ComplexNum num2 = new ComplexNum(2, 2);
         System.out.println(num2);
-        System.out.println(add(num1, num2));
-        System.out.println(sub(num1, num2));
-        System.out.println(mul(num1, num2));
-        System.out.println(div(num1, num2));
+        System.out.println(num1.add(num2));
+        System.out.println(num1.sub(num2));
+        System.out.println(num1.mul(num2));
+        System.out.println(num1.div(num2));
 
     }
     /////////////////////////////////////////////
@@ -35,29 +35,30 @@ public class ComplexNum {
         return a + "+" + b + "i";
     }
 
-    public static ComplexNum newComplexNum(int a, int b) {
-        return new ComplexNum(a, b);
-    }
+  //  public static ComplexNum newComplexNum(int a, int b) {
+    //     return new ComplexNum(a, b);
+  //  }
 
-    // сложение комплексных чисел по формуле: (a + bi) + (c + di) = (a + c) + (b + d)i
-    public static ComplexNum add(ComplexNum num1, ComplexNum num2) {
-        return new ComplexNum(num1.a + num2.a, num1.b + num2.b);
+    // с
+    // ложение комплексных чисел по формуле: (a + bi) + (c + di) = (a + c) + (b + d)i
+    public ComplexNum add(ComplexNum num) {
+        return new ComplexNum(this.a + num.a, this.b + num.b);
     }
 
     // вычитание комплексных чисел по формуле: (a + bi) - (c + di) = (a - c) + (b - d)i
-    public static ComplexNum sub(ComplexNum num1, ComplexNum num2) {
-        return new ComplexNum(num1.a - num2.a, num1.b - num2.b);
+    public ComplexNum sub(ComplexNum num) {
+        return new ComplexNum(this.a - num.a, this.b - num.b);
     }
 
     // умножение комплексных чисел по формуле: (a + bi) * (c + di) = (a*c - b*d) + (b*c + a*d)i
-    public static ComplexNum mul(ComplexNum num1, ComplexNum num2) {
-        return new ComplexNum(num1.a * num2.a - num1.b * num2.b, num1.b * num2.a + num1.a * num2.b);
+    public ComplexNum mul(ComplexNum num) {
+        return new ComplexNum(this.a * num.a - this.b * num.b, this.b * num.a + this.a * num.b);
     }
 
     // деление комплексных чисел по формуле:
     //(a + bi) / (c + di) = (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
-    public static ComplexNum div(ComplexNum num1, ComplexNum num2) {
-        int a = num1.a, b = num1.b, c = num2.a, d = num2.b;
+    public ComplexNum div(ComplexNum num) {
+        int a = this.a, b = num.b, c = this.a, d = num.b;
         return new ComplexNum((a * c + b * d) / (c * c + d * d),
                 (b * c - a * d) / (c * c + d * d));
     }
