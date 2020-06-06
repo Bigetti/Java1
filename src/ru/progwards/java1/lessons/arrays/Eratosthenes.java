@@ -9,7 +9,7 @@ public class Eratosthenes {
     ////////////////////////////////////////////////////////////////
     public static void main(String[] args){
 
-        int N = 100;
+        int N = 7;
         Eratosthenes er = new Eratosthenes(N);
         System.out.println(er);
 
@@ -35,15 +35,23 @@ public class Eratosthenes {
 
     private void sift(){
         Arrays.fill(sieve, true);
+        int p = 0;
         sieve[0] = false;
         sieve[1] = false;
-        for (int i = 2; i * i < sieve.length; i++){
-            if (sieve[i]){
-                for (int j = i * i; j < sieve.length; j+=i) {
-                    sieve[j] = false;
+        int len = sieve.length;
+        for (int i = 2; i < len; i++) {
+            System.out.println();
+            if (sieve[i]) {
+                p = i;
+                System.out.println("p = " + p);
+                for (int j = 2; j <= (len - 1) / p; j++) {
+                    sieve[j*p] = false;
+                    System.out.println(j*p);
                 }
             }
+
         }
+
 
     }
 
