@@ -14,6 +14,7 @@ public class SumBits {
 
     public static int sumBits(byte value) {
 
+
         int sum = 0;
         int sum2 = 0;
         byte res = 0;
