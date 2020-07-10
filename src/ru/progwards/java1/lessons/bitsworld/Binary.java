@@ -23,7 +23,7 @@ public class Binary {
     public String toString(){
 
 
-        return "num = " + Integer.toBinaryString(num);
+        return "Переменная byte равная " + num + " в двоичном представлении будет выглядеть так:  " + Integer.toBinaryString(num);
     }
 
 
