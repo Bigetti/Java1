@@ -6,7 +6,7 @@ public class CheckBit {
     public static void main(String[] args) {
 
 
-        checkBit((byte) 0b10101110, 7);
+        checkBit((byte) 0b10101110, 4);
     }
 /////////////////////////////////////////////
 
@@ -16,17 +16,18 @@ public class CheckBit {
         int result = 0;
         byte x = (byte) 0b00000001;
 
-        if (bitNumber == 0) {
-
-             result = value & x;
-
-            if (result % 10 == 1) {
-                result = 1;
-            } else {
-                result = 0;
-            }
-
-        } else if (bitNumber >= 1 && bitNumber < 8) {
+//        if (bitNumber == 0) {
+//
+//             result = value & x;
+//
+//            if (result % 10 == 1) {
+//                result = 1;
+//            } else {
+//                result = 0;
+//            }
+//
+//        }
+         if (bitNumber >= 0 && bitNumber < 8) {
             value = (byte) (value >> bitNumber);
             //System.out.println(value);
             result = (byte) (value & x);
