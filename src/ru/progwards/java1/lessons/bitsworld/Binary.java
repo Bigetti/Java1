@@ -10,22 +10,20 @@ public class Binary {
 
 @Override
     public String toString(){
-        int numer1 = num;
-        int numer2 = num & 00000000000000000000000011111111;
-    System.out.println(num);
-    System.out.println(numer1);
-    System.out.println(Integer.toBinaryString(numer1));
-    System.out.println(numer2);
-    System.out.println(Integer.toBinaryString(numer2));
+        String result = "";
+        int unsignedNum = num & 0b1111_1111;
+    for (int i = 0; i < 8; i++) {
 
+        result = ((unsignedNum >> i) & 1) + result;
 
-        return "Переменная byte равная " + num + "" +
-                " в двоичном представлении будет выглядеть так:  " + Integer.toBinaryString(num);
     }
+
+        return result;
+   }
 
     //////////////////////////////////////
     public static void main(String[] args) {
-        Binary number = new Binary((byte) 135);
+        Binary number = new Binary((byte) 111);
         System.out.println(number);
         }
 

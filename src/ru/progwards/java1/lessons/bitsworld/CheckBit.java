@@ -16,17 +16,7 @@ public class CheckBit {
         int result = 0;
         byte x = (byte) 0b00000001;
 
-//        if (bitNumber == 0) {
-//
-//             result = value & x;
-//
-//            if (result % 10 == 1) {
-//                result = 1;
-//            } else {
-//                result = 0;
-//            }
-//
-//        }
+
          if (bitNumber >= 0 && bitNumber < 8) {
             value = (byte) (value >> bitNumber);
             //System.out.println(value);
@@ -37,8 +27,7 @@ public class CheckBit {
             } else {
                 result = 0;
             }
-        //return result;
-        }
+         }
         System.out.println(result);
         return result;
 
