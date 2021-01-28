@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.classes;
 
+import java.util.Objects;
+
 public class Animal {
 
     private double weight;
@@ -7,35 +9,17 @@ public class Animal {
     enum AnimalKind {ANIMAL, COW, HAMSTER, DUCK};
 
     enum FoodKind {UNKNOWN, HAY, CORN};
-    /////////////////////////////////////////////////////
 
-    public static void main(String[] args) {
-
-        Animal animal = new Animal(1);
-        System.out.println(animal);
-        Hamster hamster = new Hamster(4);
-        Hamster yellow = new Hamster(11);
-        System.out.println(yellow);
-        System.out.println(hamster);
-        Duck duck = new Duck(7);
-        Duck duck1 = new Duck(4);
-        Cow cow = new Cow(233);
-        Cow Burenka = new Cow(544);
-        System.out.println(Burenka);
-        System.out.println(cow);
-        System.out.println(duck.toString());
-        System.out.println(duck.toStringFull());
-        System.out.println(duck1.toStringFull());
-
-
-    }
-//////////////////////////////////////////////////////////
     public Animal(double weight) {
         this.weight = weight;
 
     }
 
 
+
+    public interface FoodCompare {
+        public int compareFoodPrice();
+    }
 
     public AnimalKind getKind() {
         return AnimalKind.ANIMAL;
@@ -57,6 +41,39 @@ public class Animal {
         return getWeight() * getFoodCoeff();
     }
 
+    public double getFoodPrice(){
+        return calculateFoodWeight() * getFood1kgPrice();
+    }
+
+
+    public double getFood1kgPrice()
+    {
+        switch (getFoodKind()){
+            case HAY:
+                return 20;
+
+            case CORN:
+                return 50;
+
+            default: return 0;
+        }
+    }
+
+    public int compareFoodPrice(Animal animal){
+        return Double.compare(getFoodPrice(),animal.getFoodPrice());
+
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Animal animal = (Animal) obj;
+        return Double.compare(animal.calculateFoodWeight(), calculateFoodWeight()) == 0;
+    }
+
+
 
     @Override
     public String toString() {
@@ -68,6 +85,35 @@ public class Animal {
 
     }
 
+
+
+
+    public static void main(String[] args) {
+
+        Animal animal = new Animal(1);
+        System.out.println(animal.calculateFoodWeight());
+        System.out.println(animal);
+        Hamster hamster = new Hamster(4);
+        Hamster yellow = new Hamster(11);
+        System.out.println(yellow);
+        System.out.println(hamster);
+        Duck duck = new Duck(7);
+        Duck duck1 = new Duck(4);
+        Cow cow = new Cow(233);
+        Cow Burenka = new Cow(544);
+        System.out.println(Burenka);
+        System.out.println(cow);
+        System.out.println(duck.toString());
+        System.out.println(duck.toStringFull());
+        System.out.println(duck1.toStringFull());
+        System.out.println(yellow.compareFoodPrice(duck));
+        System.out.println(duck.compareFoodPrice(cow));
+        System.out.println(cow.getFoodKind());
+        System.out.println(cow.getFoodCoeff());
+        System.out.println(cow.getFood1kgPrice());
+        System.out.println(cow.calculateFoodWeight());
+
+    }
 
 }
 
@@ -87,6 +133,7 @@ class Cow extends Animal {
     public FoodKind getFoodKind() {
         return FoodKind.HAY;
     }
+
 
     @Override
     public double getFoodCoeff() {
@@ -137,5 +184,18 @@ class Duck extends Animal {
     public double getFoodCoeff() {
         return 0.04;
     }
-
 }
+
+
+
+
+
+
+
+
+    /////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////
+
+
