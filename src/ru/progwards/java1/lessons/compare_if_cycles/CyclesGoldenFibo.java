@@ -26,7 +26,7 @@ public class CyclesGoldenFibo {
 
         for (int i = 1; i < 14; i++)
         {
-            int x = fiboNumber(i);
+            int fibo = fiboNumber(i);
 
         }
 
