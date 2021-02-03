@@ -1,15 +1,33 @@
 package ru.progwards.java1.lessons.compare_if_cycles;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class CyclesGoldenFibo {
+
+
+    private static CacheInfo lastFibo;
+
+
+    public static class CacheInfo {
+        public int n;
+        public int fibo;
+    }
+
+
+    public static CacheInfo getLastFibo() {
+        return lastFibo;
+    }
+
+    public static CacheInfo clearLastFibo(){
+        return lastFibo = null;
+    }
+
     public static void main(String[] args) {
 
-        System.out.println(1 + " -это 1-е по счету число Фибоначчи");
-        System.out.println(1 + " -это 2-е по счету число Фибоначчи");
+
+
         for (int i = 1; i < 14; i++)
         {
             int x = fiboNumber(i);
+
         }
 
         fiboNumber(10);
@@ -34,27 +52,32 @@ public class CyclesGoldenFibo {
 
 
     public static int fiboNumber(int n) {
-        //int a = 1;
-        //int b = 1;
+
+     /*   if (n == lastFibo)
+        {
+            return ;
+        }*/
+
         if (n == 1 || n == 2)
 
         {
             System.out.println("1 -Число Фибоначчи " + (n) + "по счету");
             return 1;
         }
+
         else {
             int a = 1;
             int b = 1;
-            int sum_fib = 0;
+            int lastFibo = 0;
             for (int i = 2; i < n; i++) {
-                sum_fib = a + b;
+                lastFibo = a + b;
                 a = b;
-                b = sum_fib;
+                b = lastFibo;
 
             }
-            System.out.print(sum_fib);
+            System.out.print(lastFibo);
             System.out.println(" -Число Фибоначчи " + (n) + "по счету");
-            return sum_fib;
+            return lastFibo;
         }
     }
 
