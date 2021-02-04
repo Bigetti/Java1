@@ -24,7 +24,7 @@ public int fibo - результат расчета
 
 package ru.progwards.java1.lessons.interfaces;
 
-public class CyclesGoldenFibo {
+public class CalculateFibonacci {
 
     private static CacheInfo lastFibo;
 
