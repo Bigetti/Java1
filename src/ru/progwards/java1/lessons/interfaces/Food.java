@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.interfaces;
 
-import java.util.Objects;
+//import java.util.Objects;
 
 public class Food implements CompareWeight{
 
@@ -20,7 +20,7 @@ public class Food implements CompareWeight{
     public CompareResult compareWeight(CompareWeight smthHasWeigt)
     {
 
-        Animal prm = (Animal) smthHasWeigt;
+        Food prm = (Food) smthHasWeigt;
 
         if (getWeight() < prm.getWeight())
 
@@ -37,16 +37,21 @@ public class Food implements CompareWeight{
         //return null;
     }
 
-
+    @Override
+    public String toString() {
+        return "Food{" +
+                "weight=" + weight +
+                '}';
+    }
 
     public static void main(String[] args){
 
     Food first = new Food(75);
     Food second = new Food(99);
-    System.out.println(first.weight);
-    System.out.println(second.weight);
-    System.out.println(first.compareWeight(second));
     System.out.println(first.getWeight());
+    System.out.println(second.getWeight());
+    System.out.println(first.compareWeight(second));
+
 
     //System.out.println(first.compareWeight());
 

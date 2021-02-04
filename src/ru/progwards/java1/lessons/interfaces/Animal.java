@@ -22,8 +22,10 @@
         EQUAL если свой вес = веса параметра метода
         GREATER если свой вес > веса параметра метода
 
-        3.8 Скопировать реализацию сортировки из класса ArraySort из задачи 2 урока 6 и переделать сортировку массива
-        целых чисел на сортировку через интерфейс CompareWeight public static void sort(CompareWeight[] a)
+        3.8 Скопировать реализацию сортировки из класса ArraySort из задачи 2 урока 6 и
+        переделать сортировку массива
+        целых чисел на сортировку через интерфейс
+         CompareWeight public static void sort(CompareWeight[] a)
 */
 
 
@@ -167,6 +169,7 @@ public class Animal implements CompareWeight{
         System.out.println(duck.getFoodCoeff());
         System.out.println(duck.getWeight());
         System.out.println(duck.calculateFoodWeight());
+        System.out.println(duck.compareWeight(cow));
     }
 
 }
