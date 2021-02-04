@@ -15,8 +15,6 @@ public class Animal {
 
     }
 
-
-
     public interface FoodCompare {
         public int compareFoodPrice();
     }
@@ -66,16 +64,6 @@ public class Animal {
 
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Animal animal = (Animal) obj;
-        return Double.compare(animal.calculateFoodWeight(), calculateFoodWeight()) == 0;
-    }
-
-
-
-    @Override
     public String toString() {
         return "I am " + getKind() + ", eat " + getFoodKind();
     }
@@ -112,7 +100,7 @@ public class Animal {
         System.out.println(cow.getFoodCoeff());
         System.out.println(cow.getFood1kgPrice());
         System.out.println(cow.calculateFoodWeight());
-
+        System.out.println(duck.compareFoodPrice(cow));
     }
 
 }

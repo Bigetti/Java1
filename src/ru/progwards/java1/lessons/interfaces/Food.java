@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.interfaces;
 
+import java.util.Objects;
+
 public class Food implements CompareWeight{
 
     private int weight;
@@ -35,7 +37,9 @@ public class Food implements CompareWeight{
         //return null;
     }
 
-public static void main(String[] args){
+
+
+    public static void main(String[] args){
 
     Food first = new Food(75);
     Food second = new Food(99);
