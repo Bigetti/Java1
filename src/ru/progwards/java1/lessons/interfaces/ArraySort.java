@@ -9,7 +9,6 @@ public class ArraySort {
         CompareWeight exch;
         int len = a.length;
         for (int i = 0; i < len; i++) {
-            System.out.println(a[i]);
 
             for (int j = i+1; j < len; j++) {
                 if (a[i].compareWeight(a[j]) == CompareWeight.CompareResult.GREATER)

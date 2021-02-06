@@ -53,7 +53,7 @@ public class Food implements CompareWeight{
     System.out.println(first.compareWeight(second));
 
 
-    //System.out.println(first.compareWeight());
+
 
 }
 
