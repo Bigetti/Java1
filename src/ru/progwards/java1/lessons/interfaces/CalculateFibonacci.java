@@ -50,7 +50,10 @@ public class CalculateFibonacci {
         }
 
         fiboNumber(10);
+
+        clearLastFibo();
     }
+        
 
 //////////////////////////////////////////////////////////////
 
